@@ -1,3 +1,5 @@
+'use client'
+
 import { SERVER } from '@/lib/server'
 import { CopyIp } from './copy-ip'
 import { SectionHeading } from './section-heading'
