@@ -4,16 +4,20 @@ import { SectionHeading } from './section-heading'
 import { LiveStats } from './live-stats'
 
 const javaSteps = [
-  { title: 'Download Modpack', copy: `Get the Corpses Coven modpack from CurseForge. Java ${SERVER.version.split(' ')[1]}.` },
-  { title: 'Add the server', copy: 'Multiplayer → Add Server → paste the address below.' },
-  { title: 'Read the rules', copy: 'Respect the coven. No griefing, hacking, or exploits. Have fun!' },
-  { title: 'Adventure awaits', copy: 'Join your fellow witches and warlocks in a world of magic and mystery.' },
+  { title: 'Download & Install', copy: `Get the Corpses Coven modpack from CurseForge for Java ${SERVER.version.split(' ')[1]}.` },
+  { title: 'Launch Minecraft', copy: 'Open the launcher and start playing.' },
 ]
 
 const bedrockSteps = [
-  { title: 'Download app', copy: 'Get BedrockConnect on iPhone or BedrockHub Connector on Android from your app store.' },
-  { title: 'Find our server', copy: 'Open the app and search for "Corpses Coven" in the server list.' },
-  { title: 'Connect & join', copy: 'Select our server and tap join. You\'ll be added to the world!' },
+  { title: 'Server Address', copy: `mc.corpsecoven.com` },
+  { title: 'Port', copy: `26205` },
+]
+
+const consoleSteps = [
+  { title: 'Download app', copy: 'Get BedrockConnect on iPhone (App Store) or BedrockHub Connector on Android (Google Play).' },
+  { title: 'Setup on phone', copy: 'Open the app and choose "Corpses Coven" from the server directory, or manually enter the IP address and port below.' },
+  { title: 'Connect to console', copy: 'Make sure your phone and console are on the same Wi-Fi network. The app will show your console automatically—tap to connect.' },
+  { title: 'Join in Minecraft', copy: 'Open Minecraft on your console and the Corpses Coven server will appear in your world list. Join and play!' },
 ]
 
 export function Join() {
@@ -39,11 +43,28 @@ export function Join() {
             </ol>
           </div>
 
-          {/* Bedrock/Console Edition Instructions */}
+          {/* Bedrock Edition Instructions */}
           <div>
-            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Bedrock Edition (Mobile & Console)</h3>
+            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Bedrock Edition (PC & Mobile)</h3>
+            <div className="text-sm text-muted-foreground mb-4">Use these details when adding a custom server:</div>
             <ol className="flex flex-col gap-6">
               {bedrockSteps.map((s, i) => (
+                <li key={s.title} className="flex gap-5">
+                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h4 className="font-serif text-lg leading-none text-foreground">{s.title}</h4>
+                    <p className="mt-2 text-sm font-mono text-primary bg-muted/50 p-2 rounded">{s.copy}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Console Edition Instructions */}
+          <div>
+            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Console Edition (PlayStation, Xbox, Switch)</h3>
+            <ol className="flex flex-col gap-6">
+              {consoleSteps.map((s, i) => (
                 <li key={s.title} className="flex gap-5">
                   <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
                   <div>
