@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${metal.variable} ${shareTech.variable} bg-background vhs-container`}>
+    <html lang="en" className={`${metal.variable} ${shareTech.variable} bg-background`}>
       <body className="antialiased">
         <VhsGlitch />
         {children}

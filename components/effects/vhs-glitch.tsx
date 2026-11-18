@@ -31,34 +31,6 @@ export function VhsGlitch() {
           }
         }
 
-        @keyframes scan-lines {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(10px);
-          }
-        }
-
-        .vhs-scanlines {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            repeating-linear-gradient(
-              0deg,
-              rgba(255, 0, 110, 0.4),
-              rgba(255, 0, 110, 0.4) 1px,
-              transparent 1px,
-              transparent 2px
-            );
-          pointer-events: none;
-          z-index: 9998;
-          animation: scan-lines 8s linear infinite;
-        }
-
         .glitch-text {
           position: relative;
           display: inline-block;
@@ -88,7 +60,6 @@ export function VhsGlitch() {
           z-index: -2;
         }
       `}</style>
-      <div className="vhs-scanlines" />
     </>
   )
 }
