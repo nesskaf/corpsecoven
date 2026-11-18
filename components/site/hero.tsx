@@ -82,6 +82,21 @@ export function Hero() {
           Survival SMP
         </p>
 
+        <nav aria-label="Hero Actions" className="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <a
+            href="#modpack"
+            className="rough bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            Modpack
+          </a>
+          <a
+            href={SERVER.discordUrl}
+            className="rough-alt bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            Discord
+          </a>
+        </nav>
+
         <div className="mt-16 grid w-full items-end gap-12 md:grid-cols-2">
           <div className="animate-rise flex flex-col gap-6" style={{ animationDelay: '300ms' }}>
             <div className="border-l-2 border-primary pl-5">
