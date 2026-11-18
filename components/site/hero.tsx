@@ -82,8 +82,6 @@ export function Hero() {
           className="animate-rise mt-6 flex items-center gap-4 bg-primary px-6 py-2 font-mono text-sm uppercase tracking-[0.45em] text-primary-foreground shadow-[0_0_40px_var(--primary)] md:text-lg"
           style={{ animationDelay: '150ms' }}
         >
-          Witchy
-          <Cross className="size-5 bg-accent p-0.5 text-foreground" aria-hidden="true" />
           Survival SMP
         </p>
 

@@ -12,6 +12,7 @@ export default function Page() {
     <>
       <main>
         <Hero />
+        <CautionTape />
         <Features />
         <Modpack />
         <Rules />
