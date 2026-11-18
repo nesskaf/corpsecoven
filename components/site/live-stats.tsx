@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Users, Zap, TrendingUp, Eye } from 'lucide-react'
+import { Users, Zap, TrendingUp } from 'lucide-react'
 
 interface ServerStats {
   online: boolean
@@ -9,7 +9,6 @@ interface ServerStats {
   maxPlayers: number
   tps: number | null
   uptime: string | null
-  onlinePlayers: string[] | null
 }
 
 export function LiveStats() {
@@ -19,7 +18,6 @@ export function LiveStats() {
     maxPlayers: 20,
     tps: null,
     uptime: null,
-    onlinePlayers: null,
   })
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -34,17 +32,12 @@ export function LiveStats() {
         const planResponse = await fetch('/api/stats/plan')
         const planData = planResponse.ok ? await planResponse.json() : null
 
-        // Fetch from BlueMap API
-        const bluemapResponse = await fetch('/api/stats/bluemap')
-        const bluemapData = bluemapResponse.ok ? await bluemapResponse.json() : null
-
         setStats({
-          online: planData?.online ?? bluemapData?.online ?? false,
+          online: planData?.online ?? false,
           playerCount: planData?.playerCount ?? 0,
           maxPlayers: planData?.maxPlayers ?? 20,
           tps: planData?.tps ?? null,
           uptime: planData?.uptime ?? null,
-          onlinePlayers: planData?.onlinePlayers ?? null,
         })
       } catch (err) {
         setError('Failed to fetch server stats')
@@ -127,26 +120,6 @@ export function LiveStats() {
         </div>
       )}
 
-      {/* Online Players List */}
-      {stats.onlinePlayers && stats.onlinePlayers.length > 0 && (
-        <div className="rough bg-secondary/60 p-4">
-          <div className="mb-3 flex items-center gap-2">
-            <Eye className="size-4 text-primary" />
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Currently Online</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {stats.onlinePlayers.map((player) => (
-              <span
-                key={player}
-                className="rounded border border-primary/30 bg-background/50 px-2 py-1 font-mono text-xs text-foreground"
-              >
-                {player}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Map and Stats Links */}
       <div className="grid grid-cols-2 gap-3">
         <a
@@ -171,3 +144,4 @@ export function LiveStats() {
     </div>
   )
 }
+
