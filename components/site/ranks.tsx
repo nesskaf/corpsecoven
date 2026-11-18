@@ -41,7 +41,7 @@ export function Ranks() {
                 </span>
               )}
               <article
-                className={`rough flex h-full flex-col gap-6 p-6 ${
+                className={`torn-edges flex h-full flex-col gap-6 p-6 ${
                   rank.featured
                     ? 'bg-card shadow-[0_0_0_3px_var(--primary),0_0_50px_color-mix(in_oklab,var(--primary)_35%,transparent)]'
                     : 'bg-card/95'
@@ -64,7 +64,7 @@ export function Ranks() {
                 </ul>
                 <a
                   href={SERVER.storeUrl}
-                  className="rough-alt bg-secondary py-3 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="torn-edges bg-secondary py-3 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   Claim {rank.name}
                   <span className="sr-only"> rank</span>

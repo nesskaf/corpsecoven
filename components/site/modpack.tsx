@@ -44,7 +44,7 @@ export function Modpack() {
               href="https://www.curseforge.com/minecraft/modpacks/corpses-coven"
               target="_blank"
               rel="noopener noreferrer"
-              className="rough inline-flex w-fit items-center gap-2 bg-primary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
+              className="torn-edges inline-flex w-fit items-center gap-2 bg-primary px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
             >
               <span>Download on CurseForge</span>
               <ExternalLink className="size-4" aria-hidden="true" />
@@ -52,7 +52,7 @@ export function Modpack() {
           </div>
 
           <div className="animate-rise flex flex-col justify-center space-y-4" style={{ animationDelay: '150ms' }}>
-            <div className="rough bg-secondary/60 p-6">
+            <div className="torn-edges bg-secondary/60 p-6">
               <h4 className="mb-4 font-serif text-xl font-bold text-foreground">Key Mods</h4>
               <ul className="space-y-2 font-mono text-sm text-muted-foreground">
                 <li className="flex gap-2">

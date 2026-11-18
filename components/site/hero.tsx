@@ -53,14 +53,14 @@ export function Hero() {
             <a
               key={l.label}
               href={l.href}
-              className={`${i % 2 ? 'rough-alt' : 'rough'} bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground`}
+              className={`torn-edges bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground`}
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="rough w-full max-w-3xl bg-secondary/80 py-3">
+        <div className="torn-edges w-full max-w-3xl bg-secondary/80 py-3">
           <CopyIp className="w-full text-xs md:text-sm" />
         </div>
       </header>
@@ -85,13 +85,13 @@ export function Hero() {
         <nav aria-label="Hero Actions" className="mt-6 flex flex-wrap items-center justify-center gap-2">
           <a
             href="#modpack"
-            className="rough bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="torn-edges bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             Modpack
           </a>
           <a
             href={SERVER.discordUrl}
-            className="rough-alt bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="torn-edges bg-secondary/90 px-4 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             Discord
           </a>
@@ -118,7 +118,7 @@ export function Hero() {
               aria-hidden="true"
               className="absolute -top-4 left-1/2 z-10 h-7 w-28 -translate-x-1/2 -rotate-6 bg-muted-foreground/60"
             />
-            <div className="rough bg-primary p-2 shadow-[0_0_50px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
+            <div className="torn-edges bg-primary p-2 shadow-[0_0_50px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
               <div className="relative aspect-[4/5] overflow-hidden bg-background">
                 <Image
                   src="/images/hero-player.png"

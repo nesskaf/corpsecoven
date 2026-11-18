@@ -38,7 +38,7 @@ export function Rules() {
           {rules.map((rule, i) => (
             <div
               key={rule.title}
-              className="rough border-l-4 border-primary bg-secondary/60 p-6"
+              className="torn-edges border-l-4 border-primary bg-secondary/60 p-6"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <h3 className="font-serif text-lg font-bold text-foreground">{rule.title}</h3>
@@ -47,7 +47,7 @@ export function Rules() {
           ))}
         </div>
 
-        <div className="mt-12 rough bg-primary/10 p-8 text-center">
+        <div className="mt-12 torn-edges bg-primary/10 p-8 text-center">
           <p className="text-sm leading-relaxed text-muted-foreground">
             Questions about the rules? Ask in{' '}
             <a

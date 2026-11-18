@@ -126,14 +126,14 @@ export function Join() {
               aria-hidden="true"
               className="absolute -top-4 left-10 z-10 h-7 w-28 -rotate-6 bg-muted-foreground/60"
             />
-            <div className="rough rotate-1 bg-card p-8">
+            <div className="torn-edges rotate-1 bg-card p-8">
               <div className="flex items-center justify-between border-b border-dashed border-border pb-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 <span>Server address</span>
                 <span className="border border-primary px-2 py-0.5 text-primary">Open 24/7</span>
               </div>
               <p className="mt-8 break-all font-mono text-3xl text-foreground md:text-4xl">{SERVER.ip}</p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <div className="rough-alt flex-1 bg-primary py-4 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_50%,transparent)] flex items-center justify-center min-w-0">
+                <div className="torn-edges flex-1 bg-primary py-4 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_50%,transparent)] flex items-center justify-center min-w-0">
                   <CopyIp
                     label="Copy"
                     compact
@@ -142,13 +142,13 @@ export function Join() {
                 </div>
                 <a
                   href={SERVER.kofiUrl}
-                  className="rough flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  className="torn-edges flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
                 >
                   Support Us
                 </a>
                 <a
                   href={SERVER.discordUrl}
-                  className="rough flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  className="torn-edges flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
                 >
                   Discord
                 </a>

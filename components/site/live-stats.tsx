@@ -82,7 +82,7 @@ export function LiveStats() {
       </div>
 
       {/* Player Count */}
-      <div className="rough bg-secondary/60 p-4">
+      <div className="torn-edges bg-secondary/60 p-4">
         <div className="flex items-center gap-3">
           <Users className="size-5 text-primary" />
           <div className="flex-1">
@@ -99,7 +99,7 @@ export function LiveStats() {
       {(stats.tps !== null || stats.uptime) && (
         <div className="grid grid-cols-2 gap-3">
           {stats.tps !== null && (
-            <div className="rough bg-secondary/60 p-3">
+            <div className="torn-edges bg-secondary/60 p-3">
               <div className="flex items-center gap-2">
                 <Zap className="size-4 text-yellow-500" />
                 <div className="flex-1">
@@ -114,7 +114,7 @@ export function LiveStats() {
           )}
 
           {stats.uptime && (
-            <div className="rough bg-secondary/60 p-3">
+            <div className="torn-edges bg-secondary/60 p-3">
               <div className="flex items-center gap-2">
                 <TrendingUp className="size-4 text-green-500" />
                 <div className="flex-1">

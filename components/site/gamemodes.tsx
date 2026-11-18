@@ -46,7 +46,7 @@ export function Gamemodes() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
           <SectionHeading id="gamemodes-title" eyebrow="Evidence locker // realms" title="Gamemodes" ghost="PLAY" />
-          <div className="rough-alt relative max-w-xs -rotate-2 bg-secondary p-5 lg:mb-4">
+          <div className="torn-edges relative max-w-xs -rotate-2 bg-secondary p-5 lg:mb-4">
             <p className="font-serif text-sm text-primary">Read me first —</p>
             <p className="mt-2 text-sm leading-relaxed text-foreground">
               One account, every realm. Your hearts carry over. Your sins do too.
@@ -56,7 +56,7 @@ export function Gamemodes() {
 
         <ul className="mt-16 grid gap-6 md:grid-cols-2">
           {modes.map((mode, i) => (
-            <li key={mode.title} className={`${i % 2 ? 'rough-alt' : 'rough'} bg-card p-5`}>
+            <li key={mode.title} className="torn-edges bg-card p-5">
               <article className="flex h-full flex-col gap-5">
                 <div className="flex items-center justify-between border-b border-dashed border-border pb-3 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
                   <span>

@@ -19,21 +19,21 @@ export function Donate() {
             </div>
 
             <div className="space-y-4">
-              <div className="rough border-l-4 border-primary bg-secondary/60 p-4">
+              <div className="torn-edges border-l-4 border-primary bg-secondary/60 p-4">
                 <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-primary">Every Contribution Helps</h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Whether it's $1 or $100, your support keeps the servers online and helps us create an amazing community.
                 </p>
               </div>
 
-              <div className="rough border-l-4 border-primary bg-secondary/60 p-4">
+              <div className="torn-edges border-l-4 border-primary bg-secondary/60 p-4">
                 <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-primary">100% Transparent</h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Donations go directly to server hosting, maintenance, and community improvements. No hidden fees.
                 </p>
               </div>
 
-              <div className="rough border-l-4 border-primary bg-secondary/60 p-4">
+              <div className="torn-edges border-l-4 border-primary bg-secondary/60 p-4">
                 <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-primary">No Pressure</h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Corpses Coven is free to play. Donations are purely optional and purely appreciated.
@@ -43,7 +43,7 @@ export function Donate() {
           </div>
 
           <div className="animate-rise flex flex-col justify-center" style={{ animationDelay: '150ms' }}>
-            <div className="rough bg-gradient-to-b from-primary/20 to-secondary/60 p-8">
+            <div className="torn-edges bg-gradient-to-b from-primary/20 to-secondary/60 p-8">
               <div className="mb-6 flex items-center justify-center">
                 <Heart className="size-12 text-primary" fill="currentColor" aria-hidden="true" />
               </div>
@@ -58,7 +58,7 @@ export function Donate() {
                 href="https://ko-fi.com/corpsecoven"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rough mt-8 block w-full bg-primary py-4 text-center font-mono font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_30%,transparent)]"
+                className="torn-edges mt-8 block w-full bg-primary py-4 text-center font-mono font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_30%,transparent)]"
               >
                 Support on Ko-Fi ✨
               </a>

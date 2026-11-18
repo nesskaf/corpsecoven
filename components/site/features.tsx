@@ -47,7 +47,7 @@ export function Features() {
             return (
               <div
                 key={feature.title}
-                className="rough bg-secondary/60 p-6 transition-all hover:bg-secondary"
+                className="torn-edges bg-secondary/60 p-6 transition-all hover:bg-secondary"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div className="mb-4 inline-block rounded-lg bg-primary p-3">

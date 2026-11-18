@@ -39,7 +39,7 @@ export function Events() {
       <div className="mx-auto mt-16 max-w-6xl px-6">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <SectionHeading id="events-title" eyebrow="Catch us in the dark" title="Events" ghost="NIGHT" />
-          <div className="rough relative z-10 rotate-2 bg-primary px-5 py-4 text-primary-foreground shadow-[0_0_40px_color-mix(in_oklab,var(--primary)_50%,transparent)]">
+          <div className="torn-edges relative z-10 rotate-2 bg-primary px-5 py-4 text-primary-foreground shadow-[0_0_40px_color-mix(in_oklab,var(--primary)_50%,transparent)]">
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.35em]">{SERVER.nextEvent.name} rises in</p>
             <p className="mt-1 font-mono text-2xl md:text-3xl">
               <Countdown target={SERVER.nextEvent.date} />
@@ -56,7 +56,7 @@ export function Events() {
                 </span>
               )}
               <article
-                className={`${i % 2 ? 'rough-alt' : 'rough'} flex flex-col gap-5 border-l-4 p-5 sm:flex-row sm:items-center ${
+                className={`${i % 2 ? 'torn-edges' : 'torn-edges'} flex flex-col gap-5 border-l-4 p-5 sm:flex-row sm:items-center ${
                   e.next ? 'border-primary bg-accent/60' : 'border-secondary bg-card'
                 }`}
               >
@@ -74,7 +74,7 @@ export function Events() {
                 </div>
                 <a
                   href={SERVER.discordUrl}
-                  className="rough-alt self-start bg-secondary px-5 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground sm:self-center"
+                  className="torn-edges self-start bg-secondary px-5 py-2 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground sm:self-center"
                 >
                   RSVP<span className="sr-only"> for {e.title}</span>
                 </a>
