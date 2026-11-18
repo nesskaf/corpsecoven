@@ -5,6 +5,7 @@ import { BarbedWire } from './barbed-wire'
 import { CopyIp } from './copy-ip'
 import { ServerStatus } from './server-status'
 import { TornEdge } from './torn-edge'
+import { GlitchText } from '@/components/effects/vhs-glitch'
 
 const utilityLinks = [
   { label: 'Modpack', href: '#modpack' },
@@ -78,7 +79,7 @@ export function Hero() {
           className="animate-rise mt-6 flex items-center gap-4 bg-primary px-6 py-2 font-mono text-sm uppercase tracking-[0.45em] text-primary-foreground shadow-[0_0_40px_var(--primary)] md:text-lg"
           style={{ animationDelay: '150ms' }}
         >
-          Survival SMP
+          <GlitchText dataText="Survival SMP">Survival SMP</GlitchText>
         </p>
 
         <nav aria-label="Hero Actions" className="mt-6 flex flex-wrap items-center justify-center gap-2">

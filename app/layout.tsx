@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Metal_Mania, Share_Tech_Mono } from 'next/font/google'
 import './globals.css'
+import { VhsGlitch } from '@/components/effects/vhs-glitch'
 
 const metal = Metal_Mania({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${metal.variable} ${shareTech.variable} bg-background`}>
       <body className="antialiased">
+        <VhsGlitch />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
