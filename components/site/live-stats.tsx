@@ -127,26 +127,6 @@ export function LiveStats() {
         </div>
       )}
 
-      {/* Map and Stats Links */}
-      <div className="grid grid-cols-2 gap-3">
-        <a
-          href="http://mc.corpsecoven.com:8100/#world:0:0:0:1500:0:0:0:0:perspective"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rough bg-secondary/90 px-4 py-2 text-center font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
-          BlueMap
-        </a>
-        <a
-          href="http://mc.corpsecoven.com:8804/server/10c22739-b075-41ee-b29a-b0da96396f0d"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rough-alt bg-secondary/90 px-4 py-2 text-center font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
-          Stats
-        </a>
-      </div>
-
       {error && <p className="text-center text-xs text-red-500">{error}</p>}
     </div>
   )
