@@ -42,10 +42,10 @@ export function VhsGlitch() {
 
         @keyframes chromatic-shift {
           0%, 100% {
-            text-shadow: -2px 0 #ff00de, 2px 0 #00ffff;
+            text-shadow: -3px 0 #ff006e, 3px 0 #00f5ff;
           }
           50% {
-            text-shadow: 2px 0 #ff00de, -2px 0 #00ffff;
+            text-shadow: 3px 0 #ff006e, -3px 0 #00f5ff;
           }
         }
 
@@ -64,8 +64,8 @@ export function VhsGlitch() {
           background: 
             repeating-linear-gradient(
               0deg,
-              rgba(255, 0, 222, 0.03),
-              rgba(255, 0, 222, 0.03) 1px,
+              rgba(255, 0, 110, 0.15),
+              rgba(255, 0, 110, 0.15) 1px,
               transparent 1px,
               transparent 2px
             );
@@ -77,6 +77,7 @@ export function VhsGlitch() {
         .glitch-text {
           position: relative;
           display: inline-block;
+          font-weight: 900;
         }
 
         .glitch-text::before,
@@ -87,18 +88,21 @@ export function VhsGlitch() {
           top: 0;
           width: 100%;
           height: 100%;
+          opacity: 0.8;
         }
 
         .glitch-text::before {
           animation: glitch 2.5s infinite;
-          color: #ff00de;
+          color: #ff006e;
           z-index: -1;
+          left: -2px;
         }
 
         .glitch-text::after {
           animation: glitch 2.5s infinite reverse;
-          color: #00ffff;
+          color: #00f5ff;
           z-index: -2;
+          left: 2px;
         }
 
         .glitch-blur {
