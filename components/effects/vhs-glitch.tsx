@@ -40,8 +40,7 @@ export function VhsGlitch() {
           }
         }
 
-        .vhs-container::before {
-          content: '';
+        .vhs-scanlines {
           position: fixed;
           top: 0;
           left: 0;
@@ -50,13 +49,13 @@ export function VhsGlitch() {
           background: 
             repeating-linear-gradient(
               0deg,
-              rgba(255, 0, 110, 0.25),
-              rgba(255, 0, 110, 0.25) 1px,
+              rgba(255, 0, 110, 0.4),
+              rgba(255, 0, 110, 0.4) 1px,
               transparent 1px,
               transparent 2px
             );
           pointer-events: none;
-          z-index: 9999;
+          z-index: 9998;
           animation: scan-lines 8s linear infinite;
         }
 
@@ -89,6 +88,7 @@ export function VhsGlitch() {
           z-index: -2;
         }
       `}</style>
+      <div className="vhs-scanlines" />
     </>
   )
 }
