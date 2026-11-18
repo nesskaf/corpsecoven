@@ -40,11 +40,11 @@ export function Join() {
             </div>
             <p className="mt-8 break-all font-mono text-3xl text-foreground md:text-4xl">{SERVER.ip}</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <div className="rough-alt flex-1 bg-primary py-4 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_50%,transparent)]">
+              <div className="rough-alt flex-1 bg-primary py-4 shadow-[0_0_30px_color-mix(in_oklab,var(--primary)_50%,transparent)] flex items-center justify-center min-w-0">
                 <CopyIp
-                  label="Copy address"
+                  label="Copy"
                   compact
-                  className="w-full text-sm text-primary-foreground [&_span.neon-pink]:text-primary-foreground [&_span.neon-pink]:[text-shadow:none] [&_svg]:text-primary-foreground"
+                  className="text-xs md:text-sm text-primary-foreground [&_span.neon-pink]:text-primary-foreground [&_span.neon-pink]:[text-shadow:none] [&_svg]:text-primary-foreground whitespace-nowrap px-2"
                 />
               </div>
               <a
