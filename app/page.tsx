@@ -6,18 +6,24 @@ import { Rules } from '@/components/site/rules'
 import { Hero } from '@/components/site/hero'
 import { Join } from '@/components/site/join'
 import { SiteFooter } from '@/components/site/site-footer'
+import { TornDivider } from '@/components/effects/torn-divider'
 
 export default function Page() {
   return (
     <>
       <main>
         <Hero />
+        <TornDivider />
         <CautionTape />
         <Features />
+        <TornDivider />
         <Modpack />
+        <TornDivider />
         <Rules />
+        <TornDivider />
         <Donate />
         <CautionTape />
+        <TornDivider />
         <Join />
       </main>
       <SiteFooter />
