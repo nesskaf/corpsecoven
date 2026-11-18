@@ -38,10 +38,6 @@ export function Hero() {
               </a>
             ))}
           </nav>
-          <a href="#top" className="neon font-serif text-3xl leading-none md:text-4xl">
-            CC
-            <span className="sr-only">Corpses Coven home</span>
-          </a>
           <a
             href={SERVER.discordUrl}
             className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
