@@ -30,8 +30,8 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Fetch data from MC server via public API - using port 26205
-    const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER.ip}:26205`, {
+    // Fetch data from MC server via public API - using port 25665
+    const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER.ip}:25665`, {
       headers: { 'User-Agent': 'corpsescoven-site/1.0' },
       next: { revalidate: 30 }, // Cache for 30 seconds
     })
