@@ -10,12 +10,12 @@ const javaSteps = [
 
 const bedrockSteps = [
   { title: 'Server Address', copy: `mc.corpsecoven.com` },
-  { title: 'Port', copy: `26205` },
+  { title: 'Port', copy: `19132` },
 ]
 
 const consoleSteps = [
   { title: 'Download app', copy: 'Get BedrockConnect on iPhone (App Store) or BedrockHub Connector on Android (Google Play).' },
-  { title: 'Setup on phone', copy: 'Open the app and choose "Corpses Coven" from the server directory, or manually enter the IP address and port below.' },
+  { title: 'Enter server details', copy: 'Open the app and manually enter the server address and port below.' },
   { title: 'Connect to console', copy: 'Make sure your phone and console are on the same Wi-Fi network. The app will show your console automatically—tap to connect.' },
   { title: 'Join in Minecraft', copy: 'Open Minecraft on your console and the Corpses Coven server will appear in your world list. Join and play!' },
 ]
@@ -63,6 +63,17 @@ export function Join() {
           {/* Console Edition Instructions */}
           <div>
             <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Console Edition (PlayStation, Xbox, Switch)</h3>
+            <div className="text-sm text-muted-foreground mb-4">You'll need these details to enter in the app:</div>
+            <div className="mb-6 space-y-3">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-primary mb-1">Server Address</p>
+                <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">mc.corpsecoven.com</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-primary mb-1">Port</p>
+                <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">19132</p>
+              </div>
+            </div>
             <ol className="flex flex-col gap-6">
               {consoleSteps.map((s, i) => (
                 <li key={s.title} className="flex gap-5">
