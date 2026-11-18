@@ -7,20 +7,28 @@ export function TornDivider() {
         viewBox="0 0 1200 80"
         preserveAspectRatio="none"
         className="w-full h-auto block"
-        style={{ maxHeight: '80px' }}
+        style={{ maxHeight: '80px', display: 'block' }}
       >
         <defs>
           <linearGradient id="tornGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#ff006e', stopOpacity: 0.8 }} />
-            <stop offset="50%" style={{ stopColor: '#ff006e', stopOpacity: 0.5 }} />
-            <stop offset="100%" style={{ stopColor: '#ff006e', stopOpacity: 0.2 }} />
+            <stop offset="0%" style={{ stopColor: '#ff006e', stopOpacity: 1 }} />
+            <stop offset="40%" style={{ stopColor: '#ff006e', stopOpacity: 0.6 }} />
+            <stop offset="100%" style={{ stopColor: '#ff006e', stopOpacity: 0.1 }} />
           </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
         
-        {/* Top torn edge */}
+        {/* Top torn edge fill */}
         <path
           d="M 0,15 Q 15,8 30,16 Q 45,10 60,18 Q 75,8 90,16 Q 105,10 120,18 Q 135,8 150,16 Q 165,10 180,18 Q 195,8 210,16 Q 225,10 240,18 Q 255,8 270,16 Q 285,10 300,18 Q 315,8 330,16 Q 345,10 360,18 Q 375,8 390,16 Q 405,10 420,18 Q 435,8 450,16 Q 465,10 480,18 Q 495,8 510,16 Q 525,10 540,18 Q 555,8 570,16 Q 585,10 600,18 Q 615,8 630,16 Q 645,10 660,18 Q 675,8 690,16 Q 705,10 720,18 Q 735,8 750,16 Q 765,10 780,18 Q 795,8 810,16 Q 825,10 840,18 Q 855,8 870,16 Q 885,10 900,18 Q 915,8 930,16 Q 945,10 960,18 Q 975,8 990,16 Q 1005,10 1020,18 Q 1035,8 1050,16 Q 1065,10 1080,18 Q 1095,8 1110,16 Q 1125,10 1140,18 Q 1155,8 1170,16 Q 1185,10 1200,18 L 1200,0 L 0,0 Z"
           fill="url(#tornGradient)"
+          filter="url(#glow)"
         />
         
         {/* Top stroke line */}
@@ -28,16 +36,18 @@ export function TornDivider() {
           d="M 0,15 Q 15,8 30,16 Q 45,10 60,18 Q 75,8 90,16 Q 105,10 120,18 Q 135,8 150,16 Q 165,10 180,18 Q 195,8 210,16 Q 225,10 240,18 Q 255,8 270,16 Q 285,10 300,18 Q 315,8 330,16 Q 345,10 360,18 Q 375,8 390,16 Q 405,10 420,18 Q 435,8 450,16 Q 465,10 480,18 Q 495,8 510,16 Q 525,10 540,18 Q 555,8 570,16 Q 585,10 600,18 Q 615,8 630,16 Q 645,10 660,18 Q 675,8 690,16 Q 705,10 720,18 Q 735,8 750,16 Q 765,10 780,18 Q 795,8 810,16 Q 825,10 840,18 Q 855,8 870,16 Q 885,10 900,18 Q 915,8 930,16 Q 945,10 960,18 Q 975,8 990,16 Q 1005,10 1020,18 Q 1035,8 1050,16 Q 1065,10 1080,18 Q 1095,8 1110,16 Q 1125,10 1140,18 Q 1155,8 1170,16 Q 1185,10 1200,18"
           fill="none"
           stroke="#ff006e"
-          strokeWidth="2"
+          strokeWidth="2.5"
+          filter="url(#glow)"
         />
 
-        {/* Middle band */}
+        {/* Middle band - subtle glow */}
         <rect
           x="0"
           y="20"
           width="1200"
           height="40"
-          fill="rgba(255, 0, 110, 0.08)"
+          fill="rgba(255, 0, 110, 0.12)"
+          filter="url(#glow)"
         />
 
         {/* Bottom stroke line */}
@@ -45,13 +55,15 @@ export function TornDivider() {
           d="M 0,65 Q 15,72 30,64 Q 45,70 60,62 Q 75,72 90,64 Q 105,70 120,62 Q 135,72 150,64 Q 165,70 180,62 Q 195,72 210,64 Q 225,70 240,62 Q 255,72 270,64 Q 285,70 300,62 Q 315,72 330,64 Q 345,70 360,62 Q 375,72 390,64 Q 405,70 420,62 Q 435,72 450,64 Q 465,70 480,62 Q 495,72 510,64 Q 525,70 540,62 Q 555,72 570,64 Q 585,70 600,62 Q 615,72 630,64 Q 645,70 660,62 Q 675,72 690,64 Q 705,70 720,62 Q 735,72 750,64 Q 765,70 780,62 Q 795,72 810,64 Q 825,70 840,62 Q 855,72 870,64 Q 885,70 900,62 Q 915,72 930,64 Q 945,70 960,62 Q 975,72 990,64 Q 1005,70 1020,62 Q 1035,72 1050,64 Q 1065,70 1080,62 Q 1095,72 1110,64 Q 1125,70 1140,62 Q 1155,72 1170,64 Q 1185,70 1200,62"
           fill="none"
           stroke="#ff006e"
-          strokeWidth="2"
+          strokeWidth="2.5"
+          filter="url(#glow)"
         />
 
-        {/* Bottom torn edge */}
+        {/* Bottom torn edge fill */}
         <path
           d="M 0,65 Q 15,72 30,64 Q 45,70 60,62 Q 75,72 90,64 Q 105,70 120,62 Q 135,72 150,64 Q 165,70 180,62 Q 195,72 210,64 Q 225,70 240,62 Q 255,72 270,64 Q 285,70 300,62 Q 315,72 330,64 Q 345,70 360,62 Q 375,72 390,64 Q 405,70 420,62 Q 435,72 450,64 Q 465,70 480,62 Q 495,72 510,64 Q 525,70 540,62 Q 555,72 570,64 Q 585,70 600,62 Q 615,72 630,64 Q 645,70 660,62 Q 675,72 690,64 Q 705,70 720,62 Q 735,72 750,64 Q 765,70 780,62 Q 795,72 810,64 Q 825,70 840,62 Q 855,72 870,64 Q 885,70 900,62 Q 915,72 930,64 Q 945,70 960,62 Q 975,72 990,64 Q 1005,70 1020,62 Q 1035,72 1050,64 Q 1065,70 1080,62 Q 1095,72 1110,64 Q 1125,70 1140,62 Q 1155,72 1170,64 Q 1185,70 1200,62 L 1200,80 L 0,80 Z"
           fill="url(#tornGradient)"
+          filter="url(#glow)"
         />
       </svg>
     </div>
