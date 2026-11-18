@@ -28,9 +28,15 @@ export function LiveStats() {
         setLoading(true)
         setError(null)
 
-        // Fetch from Plan API
+        // Fetch from stats API
         const planResponse = await fetch('/api/stats/plan')
-        const planData = planResponse.ok ? await planResponse.json() : null
+        const planData = await planResponse.json()
+
+        console.log('Stats API response:', planData)
+
+        if (!planResponse.ok) {
+          console.warn('Stats API returned non-200 status:', planResponse.status)
+        }
 
         setStats({
           online: planData?.online ?? false,
@@ -40,7 +46,8 @@ export function LiveStats() {
           uptime: planData?.uptime ?? null,
         })
       } catch (err) {
-        setError('Failed to fetch server stats')
+        const errorMsg = err instanceof Error ? err.message : 'Unknown error'
+        setError(`Failed to fetch server stats: ${errorMsg}`)
         console.error('Stats fetch error:', err)
       } finally {
         setLoading(false)
