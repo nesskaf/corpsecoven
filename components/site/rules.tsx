@@ -49,8 +49,16 @@ export function Rules() {
 
         <div className="mt-12 rough bg-primary/10 p-8 text-center">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Questions about the rules? Ask in <span className="font-mono font-bold text-foreground">#tickets</span> on our Discord.
-            Moderation is here to help the community thrive.
+            Questions about the rules? Ask in{' '}
+            <a
+              href="https://discord.com/channels/1352744539034489007/1352755051935957082"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono font-bold text-primary transition-colors hover:text-foreground"
+            >
+              #tickets
+            </a>{' '}
+            on our Discord. Moderation is here to help the community thrive.
           </p>
         </div>
       </div>
