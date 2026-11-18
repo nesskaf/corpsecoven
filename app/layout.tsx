@@ -16,9 +16,9 @@ const shareTech = Share_Tech_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'GRAVEBLOCK — Hardcore Horror Minecraft Server',
+  title: 'Corpses Coven — Witchy Survival Minecraft Server',
   description:
-    'GRAVEBLOCK is a hardcore horror Minecraft server. Lifesteal, blood moon events, manhunts and a survival SMP that bites back. Join at play.graveblock.net.',
+    'Corpses Coven is a magical survival Minecraft SMP with proximity voice chat, curated mods, and a thriving community. Join at mc.corpsecoven.com.',
   generator: 'v0.app',
   icons: {
     icon: [

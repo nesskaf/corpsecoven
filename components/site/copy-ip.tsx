@@ -31,7 +31,7 @@ export function CopyIp({
       type="button"
       onClick={copy}
       className={cn(
-        'group flex items-center justify-center gap-3 font-mono uppercase tracking-[0.3em] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary',
+        'group flex items-center justify-center gap-3 font-mono uppercase tracking-[0.3em] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary whitespace-nowrap',
         className,
       )}
     >

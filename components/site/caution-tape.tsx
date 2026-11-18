@@ -1,6 +1,6 @@
 import { Cross } from 'lucide-react'
 
-const words = ['Graveblock', 'One life', 'Lifesteal', 'Blood moon', 'Hardcore SMP', 'Lights off', 'Come closer']
+const words = ['Corpses Coven', 'Witchy SMP', 'Voice Chat', 'Magic Mods', 'Modpack', 'Join Us', 'Adventure Awaits']
 
 function Tape({ reverse = false, inverted = false }: { reverse?: boolean; inverted?: boolean }) {
   const items = [...words, ...words]

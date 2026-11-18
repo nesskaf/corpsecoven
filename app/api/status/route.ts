@@ -5,7 +5,7 @@ const OFFLINE: ServerStatus = { online: false, players: { online: 0, max: 0 }, v
 export async function GET() {
   try {
     const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER.ip}`, {
-      headers: { 'User-Agent': 'graveblock-site/1.0' },
+      headers: { 'User-Agent': 'corpsescoven-site/1.0' },
       next: { revalidate: 60 },
     })
     if (!res.ok) return Response.json(OFFLINE)
