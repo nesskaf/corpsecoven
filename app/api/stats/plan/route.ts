@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-
-const PLAN_URL = process.env.PLAN_API_URL || 'http://mc.corpsecoven.com:8804'
-const SERVER_UUID = process.env.PLAN_SERVER_UUID || '10c22739-b075-41ee-b29a-b0da96396f0d'
+import { SERVER, type ServerStatus } from '@/lib/server'
 
 // Simple rate limiting: store request count per IP
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
@@ -32,62 +30,47 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Fetch data from Plan API
-    const response = await fetch(`${PLAN_URL}/v1/server/${SERVER_UUID}`, {
-      headers: {
-        'Accept': 'application/json',
-      },
+    // Fetch data from MC server via public API
+    const res = await fetch(`https://api.mcsrvstat.us/3/${SERVER.ip}`, {
+      headers: { 'User-Agent': 'corpsescoven-site/1.0' },
       next: { revalidate: 30 }, // Cache for 30 seconds
     })
 
-    if (!response.ok) {
-      throw new Error(`Plan API error: ${response.status}`)
+    if (!res.ok) {
+      return NextResponse.json({
+        online: false,
+        playerCount: 0,
+        maxPlayers: 20,
+        tps: null,
+        uptime: null,
+      })
     }
 
-    const data = await response.json()
+    const data = await res.json()
 
     // Sanitize and only return safe data
-    const players = Math.max(0, Math.min(1000, Number(data.players_online ?? 0)))
-    const maxPlayers = Math.max(0, Math.min(1000, Number(data.players_max ?? 20)))
-    const online = players > 0 || data.online === true
-
-    let tps: number | null = null
-    if (typeof data.tps === 'number' && data.tps >= 0 && data.tps <= 20) {
-      tps = Number(data.tps.toFixed(2))
-    } else if (Array.isArray(data.tps) && typeof data.tps[0] === 'number') {
-      tps = Number(data.tps[0].toFixed(2))
-    }
-
-    let uptime: string | null = null
-    if (typeof data.server_uptime_ms === 'number' && data.server_uptime_ms > 0) {
-      uptime = formatUptime(data.server_uptime_ms)
-    }
+    const players = Math.max(0, Math.min(1000, Number(data.players?.online ?? 0)))
+    const maxPlayers = Math.max(0, Math.min(1000, Number(data.players?.max ?? 20)))
+    const online = Boolean(data.online)
 
     return NextResponse.json({
       online,
       playerCount: players,
       maxPlayers,
-      tps,
-      uptime,
+      tps: null,
+      uptime: null,
     })
   } catch (error) {
-    console.error('Plan stats fetch error:', error)
+    console.error('Stats fetch error:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch server stats' },
+      {
+        online: false,
+        playerCount: 0,
+        maxPlayers: 20,
+        tps: null,
+        uptime: null,
+      },
       { status: 500 }
     )
   }
 }
-
-function formatUptime(ms: number): string {
-  const seconds = Math.floor(ms / 1000)
-  const minutes = Math.floor(seconds / 60)
-  const hours = Math.floor(minutes / 60)
-  const days = Math.floor(hours / 24)
-
-  if (days > 0) return `${days}d ${hours % 24}h`
-  if (hours > 0) return `${hours}h ${minutes % 60}m`
-  if (minutes > 0) return `${minutes}m`
-  return `${seconds}s`
-}
-
