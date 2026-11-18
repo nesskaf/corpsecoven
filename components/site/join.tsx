@@ -3,11 +3,17 @@ import { CopyIp } from './copy-ip'
 import { SectionHeading } from './section-heading'
 import { LiveStats } from './live-stats'
 
-const steps = [
+const javaSteps = [
   { title: 'Download Modpack', copy: `Get the Corpses Coven modpack from CurseForge. Java ${SERVER.version.split(' ')[1]}.` },
   { title: 'Add the server', copy: 'Multiplayer → Add Server → paste the address below.' },
   { title: 'Read the rules', copy: 'Respect the coven. No griefing, hacking, or exploits. Have fun!' },
   { title: 'Adventure awaits', copy: 'Join your fellow witches and warlocks in a world of magic and mystery.' },
+]
+
+const bedrockSteps = [
+  { title: 'Download app', copy: 'Get BedrockConnect on iPhone or BedrockHub Connector on Android from your app store.' },
+  { title: 'Find our server', copy: 'Open the app and search for "Corpses Coven" in the server list.' },
+  { title: 'Connect & join', copy: 'Select our server and tap join. You\'ll be added to the world!' },
 ]
 
 export function Join() {
@@ -16,17 +22,38 @@ export function Join() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-start">
         <div className="flex flex-col gap-10">
           <SectionHeading id="join-title" eyebrow="Welcome, traveler" title="Join" ghost="COVEN" />
-          <ol className="flex flex-col gap-6">
-            {steps.map((s, i) => (
-              <li key={s.title} className="flex gap-5">
-                <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <h3 className="font-serif text-2xl leading-none text-foreground">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          
+          {/* Java Edition Instructions */}
+          <div>
+            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Java Edition</h3>
+            <ol className="flex flex-col gap-6">
+              {javaSteps.map((s, i) => (
+                <li key={s.title} className="flex gap-5">
+                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Bedrock/Console Edition Instructions */}
+          <div>
+            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Bedrock Edition (Mobile & Console)</h3>
+            <ol className="flex flex-col gap-6">
+              {bedrockSteps.map((s, i) => (
+                <li key={s.title} className="flex gap-5">
+                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
 
         <div className="relative lg:mt-24 space-y-6">
