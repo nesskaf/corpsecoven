@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { SectionHeading } from './section-heading'
+import { ScrollReveal } from '@/components/effects/scroll-reveal'
 
 const modes = [
   {
@@ -56,7 +57,8 @@ export function Gamemodes() {
 
         <ul className="mt-16 grid gap-6 md:grid-cols-2">
           {modes.map((mode, i) => (
-            <li key={mode.title} className="torn-edges bg-card p-5">
+            <ScrollReveal key={mode.title}>
+              <li className="torn-edges bg-card p-5">
               <article className="flex h-full flex-col gap-5">
                 <div className="flex items-center justify-between border-b border-dashed border-border pb-3 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
                   <span>
@@ -79,6 +81,7 @@ export function Gamemodes() {
                 </div>
               </article>
             </li>
+            </ScrollReveal>
           ))}
         </ul>
       </div>

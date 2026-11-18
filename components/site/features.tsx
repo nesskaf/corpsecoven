@@ -1,6 +1,7 @@
 import { Wand2, Users, Map, Zap, Shield, Volume2 } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { TornEdge } from './torn-edge'
+import { ScrollReveal } from '@/components/effects/scroll-reveal'
 
 const features = [
   {
@@ -45,17 +46,18 @@ export function Features() {
           {features.map((feature, i) => {
             const Icon = feature.icon
             return (
-              <div
-                key={feature.title}
-                className="torn-edges bg-secondary/60 p-6 transition-all hover:bg-secondary"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                <div className="mb-4 inline-block rounded-lg bg-primary p-3">
-                  <Icon className="size-6 text-primary-foreground" aria-hidden="true" />
+              <ScrollReveal key={feature.title} className="h-full">
+                <div
+                  className="torn-edges bg-secondary/60 p-6 transition-all hover:bg-secondary h-full"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  <div className="mb-4 inline-block rounded-lg bg-primary p-3">
+                    <Icon className="size-6 text-primary-foreground" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-foreground">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
                 </div>
-                <h3 className="font-serif text-xl font-bold text-foreground">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
-              </div>
+              </ScrollReveal>
             )
           })}
         </div>

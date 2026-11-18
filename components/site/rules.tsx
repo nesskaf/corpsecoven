@@ -1,5 +1,6 @@
 import { SectionHeading } from './section-heading'
 import { TornEdge } from './torn-edge'
+import { ScrollReveal } from '@/components/effects/scroll-reveal'
 
 const rules = [
   {
@@ -36,14 +37,15 @@ export function Rules() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {rules.map((rule, i) => (
-            <div
-              key={rule.title}
-              className="torn-edges border-l-4 border-primary bg-secondary/60 p-6"
-              style={{ animationDelay: `${i * 100}ms` }}
-            >
-              <h3 className="font-serif text-lg font-bold text-foreground">{rule.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{rule.description}</p>
-            </div>
+            <ScrollReveal key={rule.title}>
+              <div
+                className="torn-edges border-l-4 border-primary bg-secondary/60 p-6"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <h3 className="font-serif text-lg font-bold text-foreground">{rule.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{rule.description}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
