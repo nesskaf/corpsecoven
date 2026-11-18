@@ -1,11 +1,12 @@
 export const SERVER = {
-  name: 'GRAVEBLOCK',
-  ip: 'play.graveblock.net',
-  version: 'Java & Bedrock 1.21+',
-  discordUrl: 'https://discord.gg/',
-  storeUrl: '#ranks',
+  name: 'Corpses Coven',
+  ip: '194.140.197.170',
+  mcDomain: 'mc.corpsecoven.com',
+  version: 'Java 1.21+',
+  discordUrl: 'https://discord.gg/YacDU78ufy',
+  donateUrl: 'https://ko-fi.com/corpsescoven',
   nextEvent: {
-    name: 'The Blood Moon',
+    name: 'Lunar Gathering',
     date: '2026-12-31T23:00:00Z',
   },
 } as const

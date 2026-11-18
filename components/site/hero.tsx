@@ -7,17 +7,17 @@ import { ServerStatus } from './server-status'
 import { TornEdge } from './torn-edge'
 
 const utilityLinks = [
-  { label: 'Store', href: '#ranks' },
+  { label: 'Modpack', href: '#modpack' },
   { label: 'Home', href: '#top', active: true },
-  { label: 'Vote', href: '#join' },
+  { label: 'Donate', href: SERVER.donateUrl },
 ]
 
 const navLinks = [
   { label: 'Join', href: '#join' },
-  { label: 'Gamemodes', href: '#gamemodes' },
-  { label: 'Ranks', href: '#ranks' },
+  { label: 'Features', href: '#features' },
+  { label: 'Modpack', href: '#modpack' },
   { label: 'Events', href: '#events' },
-  { label: 'Rules', href: '#join' },
+  { label: 'Rules', href: '#rules' },
   { label: 'Discord', href: SERVER.discordUrl },
 ]
 
@@ -40,8 +40,8 @@ export function Hero() {
             ))}
           </nav>
           <a href="#top" className="neon font-serif text-3xl leading-none md:text-4xl">
-            GB
-            <span className="sr-only">GRAVEBLOCK home</span>
+            CC
+            <span className="sr-only">Corpses Coven home</span>
           </a>
           <a
             href={SERVER.discordUrl}
@@ -76,25 +76,25 @@ export function Hero() {
           id="hero-title"
           className="neon animate-rise text-center font-serif text-[clamp(3rem,13vw,12rem)] leading-[0.85]"
         >
-          <span className="animate-flicker inline-block">GRAVEBLOCK</span>
+          <span className="animate-flicker inline-block">CORPSES COVEN</span>
         </h1>
 
         <p
           className="animate-rise mt-6 flex items-center gap-4 bg-primary px-6 py-2 font-mono text-sm uppercase tracking-[0.45em] text-primary-foreground shadow-[0_0_40px_var(--primary)] md:text-lg"
           style={{ animationDelay: '150ms' }}
         >
-          Hardcore
+          Witchy
           <Cross className="size-5 bg-accent p-0.5 text-foreground" aria-hidden="true" />
-          Horror SMP
+          Survival SMP
         </p>
 
         <div className="mt-16 grid w-full items-end gap-12 md:grid-cols-2">
           <div className="animate-rise flex flex-col gap-6" style={{ animationDelay: '300ms' }}>
             <div className="border-l-2 border-primary pl-5">
               <p className="max-w-sm text-pretty leading-relaxed text-foreground">
-                A Minecraft server where the night{' '}
-                <mark className="bg-primary px-1 text-primary-foreground">bites back</mark>. One life. Lifesteal hearts.
-                Blood moons every month. Turn your brightness down and don&apos;t log off near the caves.
+                A mystical Minecraft SMP where magic meets survival. Curated mods for atmosphere and adventure,
+                <mark className="bg-primary px-1 text-primary-foreground">proximity voice chat</mark>, and a thriving community.
+                Join the coven and experience a world of enchantment.
               </p>
             </div>
             <ServerStatus className="text-muted-foreground" />
@@ -122,21 +122,21 @@ export function Hero() {
               </div>
             </div>
             <figcaption className="absolute -bottom-6 -left-10 -rotate-12 border-2 border-primary bg-background px-3 py-2 font-mono text-xs uppercase leading-tight tracking-widest text-primary">
-              Log in at
+              Enter the
               <br />
-              your own risk
+              Coven
             </figcaption>
           </figure>
         </div>
 
         <div className="mt-20 flex w-full items-center justify-between font-mono text-[0.7rem] uppercase tracking-[0.35em] text-muted-foreground">
           <span aria-hidden="true" className="hidden tracking-[-0.1em] md:inline">
-            {'||||| |||| || ||||||| ||| |||'}
+            {'🔮 ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ 🔮'}
           </span>
-          <a href="#gamemodes" className="transition-colors hover:text-foreground">
-            {'[ Scroll to descend ]'}
+          <a href="#features" className="transition-colors hover:text-foreground">
+            {'[ Scroll to explore ]'}
           </a>
-          <span>SIG. GRV-666</span>
+          <span>SIG. COV-777</span>
         </div>
       </div>
 

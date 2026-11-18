@@ -1,9 +1,10 @@
 import { CautionTape } from '@/components/site/caution-tape'
 import { Events } from '@/components/site/events'
-import { Gamemodes } from '@/components/site/gamemodes'
+import { Features } from '@/components/site/features'
+import { Modpack } from '@/components/site/modpack'
+import { Rules } from '@/components/site/rules'
 import { Hero } from '@/components/site/hero'
 import { Join } from '@/components/site/join'
-import { Ranks } from '@/components/site/ranks'
 import { SiteFooter } from '@/components/site/site-footer'
 
 export default function Page() {
@@ -11,8 +12,9 @@ export default function Page() {
     <>
       <main>
         <Hero />
-        <Gamemodes />
-        <Ranks />
+        <Features />
+        <Modpack />
+        <Rules />
         <Events />
         <CautionTape />
         <Join />

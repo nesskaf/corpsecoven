@@ -3,10 +3,10 @@ import { CopyIp } from './copy-ip'
 import { SectionHeading } from './section-heading'
 
 const steps = [
-  { title: 'Launch Minecraft', copy: `${SERVER.version}. Bedrock players use port 19132.` },
+  { title: 'Download Modpack', copy: `Get the Corpses Coven modpack from CurseForge. Java ${SERVER.version.split(' ')[1]}.` },
   { title: 'Add the server', copy: 'Multiplayer → Add Server → paste the address below.' },
-  { title: 'Read the rules', copy: 'No hacks, no x-ray, no griefing outside of war zones. Admins see everything.' },
-  { title: 'Survive', copy: 'Or don\u2019t. The graveyard is filling up nicely.' },
+  { title: 'Read the rules', copy: 'Respect the coven. No griefing, hacking, or exploits. Have fun!' },
+  { title: 'Adventure awaits', copy: 'Join your fellow witches and warlocks in a world of magic and mystery.' },
 ]
 
 export function Join() {
@@ -14,7 +14,7 @@ export function Join() {
     <section id="join" aria-labelledby="join-title" className="grain relative scroll-mt-8 overflow-hidden pb-24 md:pb-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-start">
         <div className="flex flex-col gap-10">
-          <SectionHeading id="join-title" eyebrow="Enter if you dare" title="Join" ghost="DIG" />
+          <SectionHeading id="join-title" eyebrow="Welcome, traveler" title="Join" ghost="COVEN" />
           <ol className="flex flex-col gap-6">
             {steps.map((s, i) => (
               <li key={s.title} className="flex gap-5">
@@ -48,10 +48,16 @@ export function Join() {
                 />
               </div>
               <a
+                href={SERVER.donateUrl}
+                className="rough flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+              >
+                Support Us
+              </a>
+              <a
                 href={SERVER.discordUrl}
                 className="rough flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
-                Join the Discord
+                Discord
               </a>
             </div>
           </div>
