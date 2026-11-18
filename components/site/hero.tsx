@@ -13,10 +13,7 @@ const utilityLinks = [
 ]
 
 const navLinks = [
-  { label: 'Join', href: '#join' },
-  { label: 'Features', href: '#features' },
   { label: 'Modpack', href: '#modpack' },
-  { label: 'Rules', href: '#rules' },
   { label: 'Discord', href: SERVER.discordUrl },
 ]
 
