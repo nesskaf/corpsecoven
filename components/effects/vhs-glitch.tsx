@@ -31,6 +31,69 @@ export function VhsGlitch() {
           }
         }
 
+        @keyframes scan-lines {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(10px);
+          }
+        }
+
+        @keyframes vhs-flicker {
+          0%, 100% {
+            opacity: 0.03;
+          }
+          50% {
+            opacity: 0.08;
+          }
+        }
+
+        .vhs-scanlines {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: 
+            repeating-linear-gradient(
+              0deg,
+              rgba(255, 0, 110, 0.03),
+              rgba(255, 0, 110, 0.03) 1px,
+              transparent 1px,
+              transparent 2px
+            );
+          pointer-events: none;
+          z-index: 9998;
+          animation: scan-lines 8s linear infinite;
+        }
+
+        .vhs-glitch-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background:
+            linear-gradient(
+              0deg,
+              transparent 24%,
+              rgba(255, 0, 110, 0.05) 25%,
+              rgba(255, 0, 110, 0.05) 26%,
+              transparent 27%,
+              transparent 74%,
+              rgba(255, 0, 110, 0.05) 75%,
+              rgba(255, 0, 110, 0.05) 76%,
+              transparent 77%,
+              transparent
+            );
+          background-size: 100% 4px;
+          pointer-events: none;
+          z-index: 9999;
+          animation: vhs-flicker 0.15s infinite;
+          mix-blend-mode: screen;
+        }
+
         .glitch-text {
           position: relative;
           display: inline-block;
@@ -60,6 +123,8 @@ export function VhsGlitch() {
           z-index: -2;
         }
       `}</style>
+      <div className="vhs-scanlines" />
+      <div className="vhs-glitch-overlay" />
     </>
   )
 }
