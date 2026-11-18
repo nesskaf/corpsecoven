@@ -2,6 +2,7 @@ import { SERVER } from '@/lib/server'
 import { CopyIp } from './copy-ip'
 import { SectionHeading } from './section-heading'
 import { LiveStats } from './live-stats'
+import { useState } from 'react'
 
 const javaSteps = [
   { title: 'Download & Install', copy: `Get the Corpses Coven modpack from CurseForge for Java ${SERVER.version.split(' ')[1]}.` },
@@ -21,70 +22,99 @@ const consoleSteps = [
 ]
 
 export function Join() {
+  const [openSection, setOpenSection] = useState<'java' | 'bedrock' | 'console'>('java')
   return (
     <section id="join" aria-labelledby="join-title" className="grain relative scroll-mt-8 overflow-hidden pb-24 md:pb-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-start">
         <div className="flex flex-col gap-10">
           <SectionHeading id="join-title" eyebrow="Welcome, traveler" title="Join" ghost="COVEN" />
           
-          {/* Java Edition Instructions */}
+          {/* Java Edition Section */}
           <div>
-            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Java Edition</h3>
-            <ol className="flex flex-col gap-6">
-              {javaSteps.map((s, i) => (
-                <li key={s.title} className="flex gap-5">
-                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
-                  <div>
-                    <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <button
+              onClick={() => setOpenSection(openSection === 'java' ? undefined : 'java')}
+              className="w-full text-left font-serif text-lg uppercase tracking-widest text-primary mb-4 hover:opacity-70 transition-opacity flex items-center justify-between"
+            >
+              <span>Java Edition</span>
+              <span className="text-sm font-mono">{openSection === 'java' ? '▼' : '▶'}</span>
+            </button>
+            {openSection === 'java' && (
+              <ol className="flex flex-col gap-6">
+                {javaSteps.map((s, i) => (
+                  <li key={s.title} className="flex gap-5">
+                    <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                    <div>
+                      <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
           </div>
 
-          {/* Bedrock Edition Instructions */}
+          {/* Bedrock Edition Section */}
           <div>
-            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Bedrock Edition (PC & Mobile)</h3>
-            <div className="text-sm text-muted-foreground mb-4">Use these details when adding a custom server:</div>
-            <ol className="flex flex-col gap-6">
-              {bedrockSteps.map((s, i) => (
-                <li key={s.title} className="flex gap-5">
-                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
-                  <div>
-                    <h4 className="font-serif text-lg leading-none text-foreground">{s.title}</h4>
-                    <p className="mt-2 text-sm font-mono text-primary bg-muted/50 p-2 rounded">{s.copy}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <button
+              onClick={() => setOpenSection(openSection === 'bedrock' ? undefined : 'bedrock')}
+              className="w-full text-left font-serif text-lg uppercase tracking-widest text-primary mb-4 hover:opacity-70 transition-opacity flex items-center justify-between"
+            >
+              <span>Bedrock Edition (PC & Mobile)</span>
+              <span className="text-sm font-mono">{openSection === 'bedrock' ? '▼' : '▶'}</span>
+            </button>
+            {openSection === 'bedrock' && (
+              <>
+                <div className="text-sm text-muted-foreground mb-4">Use these details when adding a custom server:</div>
+                <ol className="flex flex-col gap-6">
+                  {bedrockSteps.map((s, i) => (
+                    <li key={s.title} className="flex gap-5">
+                      <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                      <div>
+                        <h4 className="font-serif text-lg leading-none text-foreground">{s.title}</h4>
+                        <p className="mt-2 text-sm font-mono text-primary bg-muted/50 p-2 rounded">{s.copy}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
           </div>
 
-          {/* Console Edition Instructions */}
+          {/* Console Edition Section */}
           <div>
-            <h3 className="font-serif text-lg uppercase tracking-widest text-primary mb-4">Console Edition (PlayStation, Xbox, Switch)</h3>
-            <div className="text-sm text-muted-foreground mb-4">You'll need these details to enter in the app:</div>
-            <div className="mb-6 space-y-3">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-primary mb-1">Server Address</p>
-                <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">mc.corpsecoven.com</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-primary mb-1">Port</p>
-                <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">19132</p>
-              </div>
-            </div>
-            <ol className="flex flex-col gap-6">
-              {consoleSteps.map((s, i) => (
-                <li key={s.title} className="flex gap-5">
-                  <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+            <button
+              onClick={() => setOpenSection(openSection === 'console' ? undefined : 'console')}
+              className="w-full text-left font-serif text-lg uppercase tracking-widest text-primary mb-4 hover:opacity-70 transition-opacity flex items-center justify-between"
+            >
+              <span>Console Edition (PlayStation, Xbox, Switch)</span>
+              <span className="text-sm font-mono">{openSection === 'console' ? '▼' : '▶'}</span>
+            </button>
+            {openSection === 'console' && (
+              <>
+                <div className="text-sm text-muted-foreground mb-4">You'll need these details to enter in the app:</div>
+                <div className="mb-6 space-y-3">
                   <div>
-                    <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                    <p className="text-xs uppercase tracking-widest text-primary mb-1">Server Address</p>
+                    <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">mc.corpsecoven.com</p>
                   </div>
-                </li>
-              ))}
-            </ol>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-primary mb-1">Port</p>
+                    <p className="text-sm font-mono text-primary bg-muted/50 p-2 rounded">19132</p>
+                  </div>
+                </div>
+                <ol className="flex flex-col gap-6">
+                  {consoleSteps.map((s, i) => (
+                    <li key={s.title} className="flex gap-5">
+                      <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, '0')}</span>
+                      <div>
+                        <h4 className="font-serif text-2xl leading-none text-foreground">{s.title}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
           </div>
         </div>
 
