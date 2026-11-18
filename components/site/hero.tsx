@@ -9,7 +9,7 @@ import { TornEdge } from './torn-edge'
 const utilityLinks = [
   { label: 'Modpack', href: '#modpack' },
   { label: 'Home', href: '#top', active: true },
-  { label: 'Donate', href: SERVER.donateUrl },
+  { label: 'Donate', href: '#donate' },
 ]
 
 const navLinks = [

@@ -48,7 +48,7 @@ export function Join() {
                 />
               </div>
               <a
-                href={SERVER.donateUrl}
+                href={SERVER.kofiUrl}
                 className="rough flex-1 bg-secondary py-4 text-center font-mono text-sm uppercase tracking-[0.3em] text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
                 Support Us

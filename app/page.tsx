@@ -1,4 +1,5 @@
 import { CautionTape } from '@/components/site/caution-tape'
+import { Donate } from '@/components/site/donate'
 import { Events } from '@/components/site/events'
 import { Features } from '@/components/site/features'
 import { Modpack } from '@/components/site/modpack'
@@ -16,6 +17,7 @@ export default function Page() {
         <Modpack />
         <Rules />
         <Events />
+        <Donate />
         <CautionTape />
         <Join />
       </main>
