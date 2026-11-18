@@ -1,6 +1,6 @@
 export const SERVER = {
   name: 'Corpses Coven',
-  ip: '194.140.197.170',
+  ip: 'mc.corpsecoven.com',
   mcDomain: 'mc.corpsecoven.com',
   version: 'Java 1.21+',
   discordUrl: 'https://discord.gg/YacDU78ufy',

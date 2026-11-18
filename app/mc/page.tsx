@@ -13,7 +13,7 @@ export default function MCPage() {
   }, [copied])
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(SERVER.ip)
+    navigator.clipboard.writeText(SERVER.mcDomain)
     setCopied(true)
   }
 
@@ -25,7 +25,7 @@ export default function MCPage() {
 
         <div className="rough mt-12 bg-secondary/80 p-8">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Server Address</p>
-          <p className="mt-4 break-all font-mono text-2xl font-bold text-foreground">{SERVER.ip}</p>
+          <p className="mt-4 break-all font-mono text-2xl font-bold text-foreground">{SERVER.mcDomain}</p>
 
           <button
             onClick={handleCopy}
