@@ -7,27 +7,27 @@ export function VhsGlitch() {
         @keyframes glitch {
           0% {
             clip-path: inset(40% 0 61% 0);
-            transform: translate(0, -20px);
+            transform: translate(0);
           }
           20% {
             clip-path: inset(92% 0 1% 0);
-            transform: translate(-2px, 20px);
+            transform: translate(-3px, 0);
           }
           40% {
             clip-path: inset(43% 0 1% 0);
-            transform: translate(-2px, 5px);
+            transform: translate(3px, 0);
           }
           60% {
             clip-path: inset(25% 0 58% 0);
-            transform: translate(2px, -5px);
+            transform: translate(-3px, 0);
           }
           80% {
             clip-path: inset(54% 0 7% 0);
-            transform: translate(0, -10px);
+            transform: translate(0, 0);
           }
           100% {
             clip-path: inset(58% 0 43% 0);
-            transform: translate(2px, 10px);
+            transform: translate(3px, 0);
           }
         }
 
@@ -40,20 +40,6 @@ export function VhsGlitch() {
           }
         }
 
-        @keyframes chromatic-shift {
-          0%, 100% {
-            text-shadow: -3px 0 #ff006e, 3px 0 #00f5ff;
-          }
-          50% {
-            text-shadow: 3px 0 #ff006e, -3px 0 #00f5ff;
-          }
-        }
-
-        .vhs-container {
-          position: relative;
-          overflow: hidden;
-        }
-
         .vhs-container::before {
           content: '';
           position: fixed;
@@ -64,8 +50,8 @@ export function VhsGlitch() {
           background: 
             repeating-linear-gradient(
               0deg,
-              rgba(255, 0, 110, 0.15),
-              rgba(255, 0, 110, 0.15) 1px,
+              rgba(255, 0, 110, 0.25),
+              rgba(255, 0, 110, 0.25) 1px,
               transparent 1px,
               transparent 2px
             );
@@ -77,36 +63,30 @@ export function VhsGlitch() {
         .glitch-text {
           position: relative;
           display: inline-block;
-          font-weight: 900;
-        }
-
-        .glitch-text::before,
-        .glitch-text::after {
-          content: attr(data-text);
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.8;
         }
 
         .glitch-text::before {
-          animation: glitch 2.5s infinite;
-          color: #ff006e;
-          z-index: -1;
+          content: attr(data-text);
+          position: absolute;
           left: -2px;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          color: #ff006e;
+          animation: glitch 2.5s infinite;
+          z-index: -1;
         }
 
         .glitch-text::after {
-          animation: glitch 2.5s infinite reverse;
-          color: #00f5ff;
-          z-index: -2;
+          content: attr(data-text);
+          position: absolute;
           left: 2px;
-        }
-
-        .glitch-blur {
-          animation: chromatic-shift 3s infinite;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          color: #00f5ff;
+          animation: glitch 2.5s infinite reverse;
+          z-index: -2;
         }
       `}</style>
     </>
@@ -114,8 +94,9 @@ export function VhsGlitch() {
 }
 
 export function GlitchText({ children, dataText }: { children: React.ReactNode; dataText?: string }) {
+  const text = dataText || String(children)
   return (
-    <span className="glitch-text glitch-blur" data-text={dataText || String(children)}>
+    <span className="glitch-text" data-text={text}>
       {children}
     </span>
   )
